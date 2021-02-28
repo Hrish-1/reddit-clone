@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient();
+// import { PrismaClient } from '@prisma/client'
+import prisma from '../../../prisma/db'
+//const prisma = new PrismaClient();
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const allSubs = await prisma.subreddit.findMany();
